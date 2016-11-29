@@ -17,6 +17,7 @@ var CustomerComponent = (function () {
     }
     CustomerComponent.prototype.Add = function () {
         this.customers.push(this.customerObj);
+        this.customers = this.customers.slice();
         this.customerObj = new Customer_1.Customer();
     };
     CustomerComponent.prototype.Select = function (cust) {

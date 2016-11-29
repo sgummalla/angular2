@@ -1,0 +1,15 @@
+<div>
+    Displaying Records for {{gridEntity}}
+    <table>
+        <tr>
+            <td *ngFor="let colName of gridColumns">{{colName}}</td>
+        </tr>
+        <tr *ngFor="let colObj of gridData; let i=index">
+            <td *ngFor="let colName of gridColumns">
+                {{colObj[colName]}}
+            </td>
+            <td><a href="#" (click)="Select(colObj) ">Select</a></td>
+            <td><a href="#" (click)="Delete(i) ">Delete</a></td>
+        </tr>
+    </table>
+</div>

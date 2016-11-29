@@ -7,11 +7,11 @@ import {Customer} from '../Model/Customer';
 })
 export class CustomerComponent{
     public customerObj : Customer = new Customer();
-    
     public customers : Array<Customer> = new Array<Customer>();
     
     Add(){
         this.customers.push(this.customerObj);
+        this.customers = this.customers.slice();
         this.customerObj = new Customer();
     }
     
@@ -34,7 +34,7 @@ export class CustomerComponent{
         this.customerObj = new Customer();
     }
     
-    Delete(index:number){
+    Delete(index : number){
         this.customers.splice(index, 1);
     }
 }

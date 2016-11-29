@@ -25,20 +25,6 @@
     <input type="button" value="Add" (click)="Add()" />
     <input type="button" value="Update" (click)="Update()" />
     <input type="button" value="Cancel" (click)="Cancel()" />
-    <table>
-        <tr>
-            <td>Name</td>
-            <td>Code</td>
-            <td>Amount</td>
-        </tr>
-        <tr *ngFor="let cust of customers; let i=index">
-            <td><a href="#" (click)="Select(cust)">{{cust.CustomerName}}</a></td>
-            <td>{{cust.CustomerCode}}</td>
-            <td>{{cust.CustomerAmount}}</td>
-            <td><a href="#" (click)="Delete(i)">Delete</a></td>
-        </tr>
-    </table>
-    <!--<br/> {{customerObj.CustomerName}}
-    <br/> {{customerObj.CustomerCode}}
-    <br/> {{customerObj.CustomerAmount}}-->
+    <grid-ui [grid-data]="customers" [grid-entity]="'Customers'" (grid-selected)="Select($event)" (grid-delete)="Delete($event)">
+    </grid-ui>
 </div>

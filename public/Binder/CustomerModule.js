@@ -12,13 +12,14 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var Customer_Component_1 = require('./Customer.Component');
+var Grid_Component_1 = require('./Grid.Component');
 var CustomerModule = (function () {
     function CustomerModule() {
     }
     CustomerModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [Customer_Component_1.CustomerComponent],
+            declarations: [Customer_Component_1.CustomerComponent, Grid_Component_1.GridComponent],
             bootstrap: [Customer_Component_1.CustomerComponent]
         }), 
         __metadata('design:paramtypes', [])
