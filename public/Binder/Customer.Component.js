@@ -13,7 +13,31 @@ var Customer_1 = require('../Model/Customer');
 var CustomerComponent = (function () {
     function CustomerComponent() {
         this.customerObj = new Customer_1.Customer();
+        this.customers = new Array();
     }
+    CustomerComponent.prototype.Add = function () {
+        this.customers.push(this.customerObj);
+        this.customerObj = new Customer_1.Customer();
+    };
+    CustomerComponent.prototype.Select = function (cust) {
+        this.customerObj = Object.assign({}, cust);
+    };
+    CustomerComponent.prototype.Update = function () {
+        var _this = this;
+        this.customers.forEach(function (element) {
+            if (element.CustomerCode == _this.customerObj.CustomerCode) {
+                element.CustomerName = _this.customerObj.CustomerName;
+                element.CustomerAmount = _this.customerObj.CustomerAmount;
+            }
+        });
+        this.customerObj = new Customer_1.Customer();
+    };
+    CustomerComponent.prototype.Cancel = function () {
+        this.customerObj = new Customer_1.Customer();
+    };
+    CustomerComponent.prototype.Delete = function (index) {
+        this.customers.splice(index, 1);
+    };
     CustomerComponent = __decorate([
         core_1.Component({
             selector: 'customer-ui',

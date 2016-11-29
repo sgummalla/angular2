@@ -1,4 +1,16 @@
 <div>
+    <!--<div>
+        Customer Name Obj To UI: <input id="Text1" type=Text [ngModel]="customerObj.CustomerName" />
+    </div>
+    <br/>
+    <div>
+        Customer Name UI To Obj: <input id="Text1" type=Text (input)="customerObj.CustomerName=$event.target.value" />
+    </div>
+    <br/>
+    <div>
+        Customer Name 2 Way: <input id="Text1" type=Text [ngModel]="customerObj.CustomerName" (input)="customerObj.CustomerName=$event.target.value" />
+    </div>
+    <br/>-->
     <div>
         Customer Name : <input id="Text1" type=Text [(ngModel)]="customerObj.CustomerName" />
     </div>
@@ -10,7 +22,23 @@
     <div>
         Customer Amount : <input id="Text3" type=Text [(ngModel)]="customerObj.CustomerAmount" />
     </div>
-    <br/> {{customerObj.CustomerName}}
+    <input type="button" value="Add" (click)="Add()" />
+    <input type="button" value="Update" (click)="Update()" />
+    <input type="button" value="Cancel" (click)="Cancel()" />
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Code</td>
+            <td>Amount</td>
+        </tr>
+        <tr *ngFor="let cust of customers; let i=index">
+            <td><a href="#" (click)="Select(cust)">{{cust.CustomerName}}</a></td>
+            <td>{{cust.CustomerCode}}</td>
+            <td>{{cust.CustomerAmount}}</td>
+            <td><a href="#" (click)="Delete(i)">Delete</a></td>
+        </tr>
+    </table>
+    <!--<br/> {{customerObj.CustomerName}}
     <br/> {{customerObj.CustomerCode}}
-    <br/> {{customerObj.CustomerAmount}}
+    <br/> {{customerObj.CustomerAmount}}-->
 </div>
