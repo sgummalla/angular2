@@ -8,8 +8,7 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "outDir" : "./public/app/js"
+    "suppressImplicitAnyIndexErrors": true
   },
   "exclude": [
     "node_modules"

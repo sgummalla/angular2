@@ -9,20 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var MyApp = (function () {
-    function MyApp() {
-        this.myMessage = 'Angular 2';
+var Customer_1 = require('../Model/Customer');
+var CustomerComponent = (function () {
+    function CustomerComponent() {
+        this.customerObj = new Customer_1.Customer();
     }
-    MyApp.prototype.myCallBack = function (event) {
-        this.myMessage = event;
-    };
-    MyApp = __decorate([
+    CustomerComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "<hello-world [message]=\"myMessage\" (onClick)=\"myCallBack($event)\"></hello-world>"
+            selector: 'customer-ui',
+            templateUrl: '../UI/Customer.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], MyApp);
-    return MyApp;
+    ], CustomerComponent);
+    return CustomerComponent;
 }());
-exports.MyApp = MyApp;
+exports.CustomerComponent = CustomerComponent;

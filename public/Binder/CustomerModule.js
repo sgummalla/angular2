@@ -10,19 +10,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-var MyApp_1 = require('./MyApp');
-var HelloWorld_1 = require('./HelloWorld');
-var AppModule = (function () {
-    function AppModule() {
+var forms_1 = require('@angular/forms');
+var Customer_Component_1 = require('./Customer.Component');
+var CustomerModule = (function () {
+    function CustomerModule() {
     }
-    AppModule = __decorate([
+    CustomerModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [MyApp_1.MyApp, HelloWorld_1.HelloWorld],
-            bootstrap: [MyApp_1.MyApp]
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
+            declarations: [Customer_Component_1.CustomerComponent],
+            bootstrap: [Customer_Component_1.CustomerComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], CustomerModule);
+    return CustomerModule;
 }());
-exports.AppModule = AppModule;
+exports.CustomerModule = CustomerModule;
